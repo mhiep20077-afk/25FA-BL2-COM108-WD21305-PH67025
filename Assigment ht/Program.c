@@ -1,6 +1,3 @@
-// CConsoleApplication.c : file nay chua 'main' function. 
-// Chuong trinh phan mem Bat dau thuc thi & Ket thuc o day.
-
 #include <stdio.h>
 #include <math.h>
 //Giai ?o?n 2 – Xây d?ng ch?c n?ng Y2.1, Y2.2, Y2.3, Y2.4, Y2.5, Y2.6
@@ -157,24 +154,13 @@ void vayTienMuaXe()
 	printf("So tien phai tra lan dau: %.2lf VND\n", tienTraLanDau);
 	printf("So tien phai tra hang thang: %.2lf VND\n", tienTraHangThang);
 }
-//Input: Nh?p vào h? tên
-// Di?m c?a sinh viên
-// T?ng cái hi?n th? ra h? tên và ?i?m ?? nh?p t?ng cái
-//Output : Hi?n th? ra thông tin sinh viên, ?i?m, h?c l?c, s?p x?p theo th? t?
-//?i?m gi?m d?n
-//Bi?t r?ng :
-//?i?m >= 9.0 : H?c l?c xu?t s?c
-//?i?m >= 8.0 : H?c l?c gi?i
-//?i?m >= 6.5 : H?c l?c khá
-//?i?m >= 5.0 : H?c l?c trung bình
-//?i?m < 5 : H?c l?c y?u
 void thongTinSinhVien()
 {
-	printf("\nNhap ho ten sinh vien [ Ko Dau ]: ");
+	printf("\nNhap ho ten sinh vien (Ko Dau): ");
 	char hoTen[100];
 	getchar(); 
 	fgets(hoTen, sizeof(hoTen), stdin);
-	printf("Nhap diem sinh vien: ");
+	printf("Nhap diem sinh vien (1-10): ");
 	double diem;
 	if (scanf("%lf", &diem) != 1) return;
 	const char* hocLuc;
@@ -299,7 +285,6 @@ void lapChucNang(int chon)
 	}
 
 }
-
 int main()
 {
 	int chon;
@@ -323,25 +308,4 @@ int main()
 		lapChucNang(chon);
 	} while (chon != 0);
 }
-
-// Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
-
-// Danh cho nguoi moi bat dau:
-//   1. Mo "View" > "Solution Explorer"
-//          de them/quan ly cac files
-//   2. Mo "View" > "Output"
-//          de kiem tra "build output" va "cac thong bao khac"
-//   3. Mo "View" > "Error List"
-//          de xem loi
-//   4. Chon Project > "Add" > "New Item"
-//          de tao moi file code,
-//      hoac Project > "Add" > "Existing Item"
-//          de them file da ton tai vao project nay.
-//   5. Sau nay, de mo lai project nay,
-//          chon "File > Open > Project" va chon file *.sln
-//      Co the xem thu muc project, noi luu file *.sln bang cach
-//          trong cua so "Solution Explorer"
-//          bam chuot phai vao "Solution"
-//          chon "Open Folder in File Explorer"
-
 // GV: AnhTT184
