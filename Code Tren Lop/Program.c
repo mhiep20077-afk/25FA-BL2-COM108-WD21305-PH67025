@@ -38,6 +38,37 @@ void sapXepPhanTuMang()
 	}
 }
 
+void demoMang2Chieu()
+{
+	//string - string.h
+	char mangkytu[10] = "Hello";
+	//scanf("%c");
+	//gets(mangkytu);
+	for (int i = 0; i < 3; i++)
+	{
+		scanf("%c", &mangkytu[i]);
+	}
+	//printf("%c\n");
+	puts(mangkytu);
+	int array[2][3];
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("Nhap phan tu array[%d][%d]: ", i, j);
+			scanf("%d", &array[i][j]);
+		}
+	}
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("Mang[%d][%d] =", i, j;
+			scanf_s("%d", &array[i][j]);
+		}
+		printf("\n");
+	}
+}
 void lapChucNang(int chonChucNang)
 {
 	int tiepTuc = 1;
@@ -49,7 +80,7 @@ void lapChucNang(int chonChucNang)
 			kiemTraSoNguyen();
 			break;
 		case 2:
-			// ham goi chuc nang 2
+			demoMang2Chieu();
 			break;
 		case 3:
 			sapXepPhanTuMang();
@@ -75,7 +106,7 @@ int main()
 		printf("\n");
 		printf("1. Kiem Tra So Nguyen");
 		printf("\n");
-		printf("2. TEN chuc nang 2");
+		printf("2. demoMang2Chieu");
 		printf("\n");
 		printf("3. sapXepPhanTuMang");
 		printf("\n");
