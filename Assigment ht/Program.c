@@ -57,31 +57,27 @@ void timUocvaBoiSoChung()
 }
 void tinhTienquanKaraoke()
 {
-		int chon;
-		int batDau, ketThuc;
-		printf("Gio bat dau: ");
-		if (scanf("%d", &batDau) != 1) return;
-		printf("Gio ket thuc: ");
-		if (scanf("%d", &ketThuc) != 1) return;
+	int start, end;
+	printf("Nhap gio bat dau (12-23): "); scanf("%d", &start);
+	printf("Nhap gio ket thuc (12-23): "); scanf("%d", &end);
 
-		if (batDau >= ketThuc) {
-			printf("Gio sai!\n");
-			return;
-		}
+	if (start < 12 || end > 23 || start >= end) {
+		printf("Gio khong hop le!\n");
+		return;
+	}
 
-		int soGio = ketThuc - batDau;
-		double tong = 0;
-		double gia = 150000;
+	int h = end - start;
+	float price = 0;
 
-		if (soGio <= 3)
-			tong = soGio * gia;
-		else
-			tong = 3 * gia + (soGio - 3) * gia * 0.7;
+	if (h <= 3)
+		price = h * 150000;
+	else
+		price = 3 * 150000 + (h - 3) * 150000 * 0.7;
 
-		if (batDau >= 14 && batDau <= 17)
-			tong = tong * 0.9;
+	if (start >= 14 && start <= 17)
+		price *= 0.9;
 
-		printf("Thanh tien: %.0lf VND\n", tong);
+	printf("Tien karaoke phai tra: %.0f VND\n", price);
 }
 void tienDien()
 {
@@ -89,7 +85,7 @@ void tienDien()
 		int kwh;
 		double tong = 0;
 
-		printf("Nhap kWh: ");
+		printf("Nhap so kWh: ");
 		if (scanf("%d", &kwh) != 1) return;
 
 		if (kwh <= 50)
@@ -105,7 +101,7 @@ void tienDien()
 		else
 			tong = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + 100 * 2834 + (kwh - 400) * 2927;
 
-		printf("Tien dien: %.0lf VND\n", tong);
+		printf("So tien dien phai nop la: %.0lf VND\n", tong);
 }
 void doiTien()
 {
@@ -126,13 +122,28 @@ void doiTien()
 }
 void laisuatNganHang()
 {
-	printf("\nNhap so tien muon vay: ");
-	double tienVay;
-	if (scanf("%lf", &tienVay) != 1) return;
-	double laiSuatThang = 0.05;
-	double tongTienPhaiTra = tienVay * pow((1 + laiSuatThang), 12);
-	printf("Tong so tien phai tra sau 12 thang: %.2lf VND\n", tongTienPhaiTra);
+	double money;
+	printf("Nhap so tien can vay: ");
+	scanf("%lf", &money);
 
+	double lai = 0.05;
+	int thang = 12;
+
+	double goc_thang = money / thang;
+	double tong = 0;
+
+	printf("\n=== BANG TRA GOP 12 THANG ===\n");
+
+	for (int i = 1; i <= thang; i++) {
+		double tien_lai = money * lai;
+		double tien_thang = goc_thang + tien_lai;
+		money -= goc_thang;
+		tong += tien_thang;
+
+		printf("Thang %d: %.0f VND\n", i, tien_thang);
+	}
+
+	printf("Tong phai tra: %.0f VND\n", tong);
 }
 void vayTienMuaXe()
 {
