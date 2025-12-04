@@ -69,6 +69,37 @@ void demoMang2Chieu()
 		printf("\n");
 	}
 }
+void string()
+{
+	//string
+	char mangKyTu[10] = 'ANH';
+	//scanf("%c"
+	//gets(mangKyTu);
+	while (getchar() != '\n');
+	printf("Nhap du lieu String: ");
+	fgets(mangKyTu, sizeof(mangKyTu), stdin);
+	//loop + printf("%c\n"
+	printf("%s", mangKyTu);
+	printf("\n");
+	// put(mangKyTu);
+	printf("%d", strlen(mangKyTu) - 1);
+	printf("\n");
+
+	printf("%d", strcmp("A", "B"));
+	printf("\n");
+	char str[5] = "ABC";
+	printf("%s", strrev(str));
+	printf("\n");
+
+	printf("%s", strlwr(str));
+	printf("\n");
+
+	printf("%s", strupr(str));
+	printf("\n");
+
+	printf(strstr("ABC", "D"));
+	printf("\n");
+}
 void lapChucNang(int chonChucNang)
 {
 	int tiepTuc = 1;
@@ -84,6 +115,9 @@ void lapChucNang(int chonChucNang)
 			break;
 		case 3:
 			sapXepPhanTuMang();
+			break;
+		case 4:
+			string();
 			break;
 		default:
 			printf("Chon sai. Chuc nang hop le [0-3]");
@@ -109,6 +143,8 @@ int main()
 		printf("2. demoMang2Chieu");
 		printf("\n");
 		printf("3. sapXepPhanTuMang");
+		printf("\n");
+		printf("4. String");
 		printf("\n");
 		printf("0. Thoat");
 		printf("\n");
